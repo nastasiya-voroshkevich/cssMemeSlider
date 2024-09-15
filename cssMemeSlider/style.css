@@ -2,9 +2,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 
-*,
-*:before,
-*:after {
+* {
   box-sizing: border-box;
 }
 
@@ -90,7 +88,7 @@ body {
     text-align: right;
     border: 0.1rem solid #fff;
     background: #fff;
-    position: relative;
+  
     z-index: 1;
     border-radius: 100%;
     line-height: 1rem;
