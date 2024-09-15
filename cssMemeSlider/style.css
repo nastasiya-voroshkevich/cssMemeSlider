@@ -125,10 +125,22 @@ body {
   }
 }
 
+@media (min-width: 418px) {
+  .slider-body {
+    width: 34rem;
+    height: 25rem;
+  }
+}
 @media (min-width: 440px) {
   .slider-body {
     width: 38rem;
     height: 30rem;
+  }
+}
+@media (min-width: 630px) {
+  .slider-body {
+    width: 38rem;
+    height: 35rem;
   }
 }
 
