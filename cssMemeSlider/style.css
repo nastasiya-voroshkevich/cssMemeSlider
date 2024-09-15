@@ -1,3 +1,5 @@
+
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 
 *,
@@ -6,10 +8,10 @@
   box-sizing: border-box;
 }
 
-html,
+ html,
 body {
   background-color: #fff;
-}
+} 
 
 img {
   max-width: 100%;
@@ -18,36 +20,23 @@ img {
   vertical-align: middle;
 }
 
+
 body {
-  color: #dbdada;
+  color: #444;
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   line-height: 1.5;
 }
 
-.slider__contents {
-  opacity: 0;
-}
-
-.slider__contents:target {
-  opacity: 1;
-  overflow: hidden;
-}
-
-
 @media (min-width: 320px) {
-
   .slider {
-    border: 0.1rem solid #000;
-    background-color: rgb(135, 128, 163);
-    padding: 1rem;
     width: 100%;
     height: 80%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    overflow: hidden;
+  
     -webkit-flex-flow: row nowrap;
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
@@ -69,7 +58,6 @@ body {
     flex-direction: column;
     padding-top: 1rem;
   }
-
   .slider ul {
     list-style-type: none;
     display: flex;
@@ -78,13 +66,14 @@ body {
   }
 
   .wrapp-img {
-
     display: flex;
     align-items: center;
-    margin-bottom: -1rem;
+    /* margin-top: -15rem; */
   }
-
   .slider__contents {
+    background-color: rgb(203, 211, 211);
+    padding: 1rem;
+    border: 0.1rem solid #000; 
     width: 100%;
     height: 100%;
     text-align: center;
@@ -94,11 +83,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
-    padding: 1rem;
-    overflow: hidden;
   }
-
   .circle {
     width: 1.3rem;
     height: 1.3rem;
@@ -110,13 +95,11 @@ body {
     border-radius: 100%;
     line-height: 1rem;
   }
-
   .slider-body {
-    width: 30rem;
-    height: 21rem;
-
+    width: 35rem;
+    height: 25rem;
+    overflow: hidden;
   }
-
   .slider__txt {
     text-align: start;
     color: rgb(5, 5, 5);
@@ -125,25 +108,17 @@ body {
   }
 }
 
-@media (min-width: 418px) {
-  .slider-body {
-    width: 34rem;
-    height: 25rem;
-  }
-}
 @media (min-width: 440px) {
   .slider-body {
     width: 38rem;
-    height: 30rem;
+    height: 34rem;
   }
 }
-@media (min-width: 630px) {
+@media (min-width: 580px) {
   .slider-body {
-    width: 38rem;
-    height: 35rem;
+       height: 36rem;
   }
 }
-
 
 @media (min-width: 768px) {
   .slider {
@@ -152,26 +127,32 @@ body {
     margin: 0 auto;
   }
 }
-
-
-.slider__contents:target img {
-  animation-duration: 3s;
-  animation-name: move;
+.slider__contents {
+  opacity: 0;
+  display: none;
+}
+.slider__contents:target {
+  opacity: 1;
+  display: block;
 }
 
+.slider__contents:target img {
+  animation-duration: 0.4s;
+  animation-name: spin;
+}
 .slider__contents:target .slider__txt {
-  animation-duration: 3s;
+  animation-duration: 0.4s;
   animation-name: move;
 }
 
 #i1 {
   opacity: 1;
+
 }
 
 .slider__contents #link {
   background: #073f4163;
 }
-
 .slider__contents:target #link,
 .slider__contents:target #link2,
 .slider__contents:target #link3,
@@ -184,21 +165,24 @@ body {
     flex-direction: row-reverse;
     justify-content: space-between;
   }
-
+  .slider-body {
+    width: 40rem;
+    height: 40rem;
+    overflow: hidden;
+  }
 
   .slider ul {
     margin-top: 3.5rem;
     margin-left: 0rem;
     margin-right: -0.7rem;
   }
-
   .wrapp-img {
+
     height: 26rem;
     display: flex;
     align-items: center;
-    margin-bottom: -3rem;
+    margin-top: 0rem;
   }
-
   .slider__txt {
     margin-top: 3.3rem;
     margin-bottom: 1rem;
@@ -212,6 +196,7 @@ body {
 
 .slider-body slider__contents {
   opacity: 0;
+  display: none;
   overflow: hidden;
 }
 
@@ -222,13 +207,11 @@ a {
   text-align: center;
   line-height: 1rem;
 }
-
 .slider ul li a:hover .circle {
   cursor: pointer;
   border: 0.1rem solid#073f4163;
   background: #073f4163;
 }
-
 .slider ul li a:active .circle {
   cursor: pointer;
   border: 0.1rem solid#073f4163;
@@ -248,8 +231,18 @@ a {
   from {
     margin-left: -40rem;
   }
-
   to {
     margin-left: 0rem;
+  }
+}
+
+@-webkit-keyframes spin {
+  /* 0%  {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}	 */
+  from {
+    margin-right: -40rem;
+  }
+  to {
+    margin-right: 0rem;
   }
 }
